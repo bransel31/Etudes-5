@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Images!</title>
+
+  </head>
+  <body>
+
+
+    <a href="#">
+         <img src="drum1.jpg" id="1">
+         <img src="drum2.jpg" id="2">
+         <img src="drum3.jpg" id="3">
+         <img src="drum4.jpg" id="4">
+    </a>
+
+
+    <script language="javascript">
+        const arr = ['1', '2', '3', '4']
+
+        for(let i = 0; i < arr.length; i++) {
+            const x = document.getElementById(arr[i])
+
+            x.addEventListener('click', function() {
+                x.parentNode.removeChild(x)
+            })
+        }
+
+
+
+    </script>
+  </body>
+</html>

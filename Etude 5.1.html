@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Etude 5.1</title>
+
+    <style>
+      button {
+        font-weight: bold;
+        margin: 1em;
+        padding: 1em;
+        background-color: blue;
+        color: white;
+      }
+
+      h1 {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      span#counter {
+        font-style: italic;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Header</h1>
+<span> Name </span>
+  <input type="text" id="name"/>
+<span> Birthday </span>
+  <input type="date" id="date"/>
+
+<button id="read">Read!</button>
+<span id=age />
+    <script language="javascript">
+      let name = document.getElementById('name');
+      let date = document.getElementById('date');
+      let age = document.getElementById('age');
+      let button = document.getElementById('read');
+
+      const today = new Date()
+      const day =today.getDate()
+      const month =today.getMonth() + 1
+      const year =today.getFullYear()
+
+      button.addEventListener('click', function() {
+        const input = document.getElementById("date").value
+
+        const myToday = new Date(input)
+        const myDay = myToday.getDate() + 1
+        const myMonth = myToday.getMonth() + 1
+        const myYear = myToday.getFullYear()
+
+        let yearsOld = year - myYear
+        
+        if(month === myMonth){
+          if(myDay > day){
+            yearsOld--
+          }
+        }
+          else if(myMonth > month){
+            yearsOld--
+          }
+
+        age.innerHTML = name.value + ', ' + 'you are ' + yearsOld + '!'
+      });
+    </script>
+  </body>
+</html>
